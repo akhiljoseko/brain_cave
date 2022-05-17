@@ -1,3 +1,5 @@
+import 'package:brain_cave/authentication/view/widgets/company_logo.dart';
+import 'package:brain_cave/authentication/view/widgets/easy_login_options.dart';
 import 'package:flutter/material.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -12,39 +14,37 @@ class SignUpScreen extends StatelessWidget {
         leading: BackButton(color: Theme.of(context).primaryColor),
         elevation: 0.0,
       ),
-      body: SafeArea(
-        minimum: const EdgeInsets.symmetric(horizontal: 24),
-        child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: SafeArea(
+          minimum: const EdgeInsets.symmetric(horizontal: 24),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const CompanyLogo(),
               Text(
                 "Create your account",
                 style: Theme.of(context).textTheme.headline5,
               ),
-              const SizedBox(height: 48),
+              const SizedBox(height: 32),
               TextFormField(
                 decoration: const InputDecoration(
                   label: Text("Name"),
                 ),
                 onChanged: (s) {},
               ),
-              const SizedBox(height: 24),
               TextFormField(
                 decoration: const InputDecoration(
                   label: Text("Email"),
                 ),
                 onChanged: (s) {},
               ),
-              const SizedBox(height: 24),
               TextFormField(
                 decoration: const InputDecoration(
                   label: Text("Mobile"),
                 ),
                 onChanged: (s) {},
               ),
-              const SizedBox(height: 24),
               TextFormField(
                 obscureText: true,
                 decoration: const InputDecoration(
@@ -52,7 +52,7 @@ class SignUpScreen extends StatelessWidget {
                 ),
                 onChanged: (s) {},
               ),
-              const SizedBox(height: 24),
+              const SizedBox(height: 32),
               Align(
                 alignment: Alignment.center,
                 child: ElevatedButton(
@@ -67,7 +67,9 @@ class SignUpScreen extends StatelessWidget {
                     "Sign Up",
                   ),
                 ),
-              )
+              ),
+              const EasyLoginOptions(isSignUp: true),
+              const SizedBox(height: 24),
             ],
           ),
         ),
