@@ -1,4 +1,4 @@
-import 'package:brain_cave/authentication/view/login_screen.dart';
+import 'package:brain_cave/authentication/view/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
